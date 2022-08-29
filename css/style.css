@@ -20,6 +20,12 @@ html {
 
 body {
   background-color: var(--mainBackground);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 h1,
 h2,
@@ -40,35 +46,42 @@ a:active {
 }
 
 .card {
-  margin: 4rem auto 0 auto;
   width: 19rem;
   background-color: var(--cardBackground);
   border-radius: 1rem;
-}
-@media (min-width: 768px) {
-  .card {
-    margin-top: 10rem;
-  }
-
 }
 
 .card {
   padding: 1.3rem;
 }
-
 .imagen {
   border-radius: 0.5rem;
+  position: absolute;
+  width: 100%;
+}
+.contenedor-nft-imagen {
+  position: relative;
+  border-radius: 0.5rem;
+  height: 16rem;
+  overflow: hidden;
+  background-size: cover;
 }
 
-.imagen:hover {
-  cursor: pointer;
+.sombra {
+  height: 100%;
+}
+#icon-eye {
+  position: absolute;
+  left: 42%;
+  top: 40%;
+  display: none;
 }
 
 .titulo {
-  margin-top: 1rem;
+  margin-top: 2rem;
   color: var(--White);
   font-family: var(--fuente);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 
   font-weight: 600;
 }
@@ -81,9 +94,10 @@ a:active {
   margin: 0;
   font-family: var(--fuente);
   color: var(--descripcion);
-  font-size: 1rem;
+  font-size: 0.94rem;
   line-height: 1.5;
-  font-weight: 300;
+  font-weight: 400;
+  opacity: 0.8;
 }
 /*  PRECIO Y DIAS   */
 .valor {
@@ -105,7 +119,9 @@ a:active {
   color: var(--valor);
   font-family: var(--fuente);
   margin-left: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  
+  font-weight: 400;
 }
 
 .valor__timer-texto {
@@ -113,13 +129,14 @@ a:active {
   color: var(--descripcion);
   font-family: var(--fuente);
   margin-left: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+
 }
 
 /* Creador */
 .linea {
   border-top: 2px var(--linea) solid;
-  margin-top: 1rem;
+  margin-top: 0.6rem;
   opacity: 0.6;
 }
 .autor {
@@ -145,15 +162,11 @@ a:active {
   margin-top: 1.6rem;
   font-family: var(--fuente);
   color: var(--descripcion);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 400;
 }
 .autor--name {
   color: var(--White);
-}
-.autor--name,
-.titulo:hover {
-  cursor: pointer;
 }
 
 .attribution {
@@ -164,3 +177,50 @@ a:active {
   font-size: 0.8rem;
 }
 
+/* Interactive states */
+
+.imagen:hover,
+.autor--name:hover,
+.titulo:hover {
+  color: var(--valor);
+  cursor: pointer;
+}
+.sombra:hover {
+  background-color: var(--valor);
+  cursor: pointer;
+}
+
+.imagen:hover ~ #icon-eye {
+  display: block;
+}
+
+.imagen:hover {
+  opacity: 0.5;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    margin-top: 5rem;
+    width: 22rem;
+  }
+  .contenedor-nft-imagen {
+    height: 19rem;
+  }
+  .titulo {
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+  }
+  .descripcion p {
+    font-size: 1.15rem;
+  }
+  .valor {
+    margin-top: 1rem;
+  }
+  .linea {
+    margin-top: 0.8rem;
+  }
+  .autor p {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
