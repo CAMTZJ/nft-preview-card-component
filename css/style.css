@@ -1,0 +1,166 @@
+:root {
+  --descripcion: hsl(215, 51%, 70%);
+  --valor: hsl(178, 100%, 50%);
+  --mainBackground: hsl(217, 54%, 11%);
+  --cardBackground: hsl(216, 50%, 16%);
+  --linea: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+
+  --fuente: "Outfit", sans-serif;
+}
+html {
+  box-sizing: border-box;
+  font-family: 62.5%; /* 1rem = 10px */
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--mainBackground);
+}
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  color: rgb(132, 205, 132);
+}
+
+.card {
+  margin: 4rem auto 0 auto;
+  width: 19rem;
+  background-color: var(--cardBackground);
+  border-radius: 1rem;
+}
+@media (min-width: 768px) {
+  .card {
+    margin-top: 10rem;
+  }
+
+}
+
+.card {
+  padding: 1.3rem;
+}
+
+.imagen {
+  border-radius: 0.5rem;
+}
+
+.imagen:hover {
+  cursor: pointer;
+}
+
+.titulo {
+  margin-top: 1rem;
+  color: var(--White);
+  font-family: var(--fuente);
+  font-size: 1.4rem;
+
+  font-weight: 600;
+}
+.descripcion {
+  height: 3.5rem;
+  margin: 1rem 0 0.2rem 0;
+}
+
+.descripcion p {
+  margin: 0;
+  font-family: var(--fuente);
+  color: var(--descripcion);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+/*  PRECIO Y DIAS   */
+.valor {
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.caja {
+  justify-items: center;
+  display: flex;
+}
+.valor__imagen {
+  background-size: 0.5;
+}
+
+.valor__token-texto {
+  margin: 0;
+  color: var(--valor);
+  font-family: var(--fuente);
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.valor__timer-texto {
+  margin: 0;
+  color: var(--descripcion);
+  font-family: var(--fuente);
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Creador */
+.linea {
+  border-top: 2px var(--linea) solid;
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+.autor {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+}
+.fondo__imagen {
+  background-color: var(--White);
+  height: 2.3rem;
+  width: 2.3rem;
+  border-radius: 50%;
+  margin: 1rem 0;
+}
+
+.autor__imagen {
+  padding: 0.05rem;
+  background-size: cover;
+  background-size: 5rem;
+}
+.autor p {
+  margin-left: 1.1rem;
+  margin-top: 1.6rem;
+  font-family: var(--fuente);
+  color: var(--descripcion);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.autor--name {
+  color: var(--White);
+}
+.autor--name,
+.titulo:hover {
+  cursor: pointer;
+}
+
+.attribution {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--White);
+  font-family: var(--fuente);
+  font-size: 0.8rem;
+}
+
